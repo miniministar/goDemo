@@ -6,9 +6,7 @@ require (
 	github.com/Shopify/sarama v1.29.1 // indirect
 	github.com/bsm/sarama-cluster v2.1.15+incompatible // indirect
 	github.com/go-redis/redis/v8 v8.11.0 // indirect
-	github.com/go-sql-driver/mysql v1.6.0 // indirect
 	github.com/jinzhu/gorm v1.9.16 // indirect
-	github.com/jmoiron/sqlx v1.3.4 // indirect
 	gopkg.in/jcmturner/aescts.v1 v1.0.1 // indirect
 	gopkg.in/jcmturner/dnsutils.v1 v1.0.1 // indirect
 	gopkg.in/jcmturner/goidentity.v3 v3.0.0 // indirect
