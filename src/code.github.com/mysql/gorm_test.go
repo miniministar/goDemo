@@ -8,7 +8,7 @@ import (
 )
 
 func initGormDB() (db *gorm.DB) {
-	db, err := gorm.Open("mysql", "root:root@tcp(127.0.0.1:3306)/sql_test?charset=utf8&parseTime=True&loc=Local")
+	db, err := gorm.Open("mysql", "root:sany_root@tcp(127.0.0.1:3306)/sql_test?charset=utf8&parseTime=True&loc=Local")
 	if err != nil {
 		panic("连接数据库失败")
 	}
@@ -77,4 +77,14 @@ func TestGormQuery(t *testing.T) {
 	for i := 0; i < len(u2); i++ {
 		printUser(&u2[i])
 	}
+}
+
+func TestDecimal(t *testing.T) {
+	db := initGormDB()
+	if db == nil {
+		return
+	}
+	var u Test
+	db.Table("test").Find(&u, "id=?", 1)
+	println("id %d money %v", u.Id, u.Money)
 }

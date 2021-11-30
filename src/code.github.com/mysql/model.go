@@ -1,6 +1,8 @@
 package mysql
 
-import "github.com/jinzhu/gorm"
+import (
+	"github.com/jinzhu/gorm"
+)
 
 type user struct {
 	Id   int
@@ -13,4 +15,9 @@ type AccountInfo struct {
 	Name     string `gorm:"not null;unique"`
 	Password string `gorm:"not null;"`
 	Status   uint   `gorm:"default:0"`
+}
+
+type Test struct {
+	Id    int
+	Money string
 }

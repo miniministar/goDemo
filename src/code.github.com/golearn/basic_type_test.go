@@ -1,13 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"testing"
+)
 
 var str string = `
 多行字符串
 ，第二行
 `
 
-func main() {
+func TestBasic(t *testing.T) {
 	//字符串长度
 	fmt.Println(len(str), fmt.Sprint(str, "拼接字符串"), str)
 	var inta int = 32

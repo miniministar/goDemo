@@ -2,10 +2,11 @@ package main
 
 import (
 	"fmt"
+	"testing"
 	"time"
 )
 
-func timeDemo(){
+func timeDemo() {
 	now := time.Now()
 	fmt.Printf("current time: %v\n", now)
 
@@ -19,7 +20,7 @@ func timeDemo(){
 	fmt.Printf("%d-%02d-%02d %02d:%02d:%02d\n", year, month, day, hour, minute, second)
 }
 
-func main()  {
+func TestTime(t *testing.T) {
 	timeDemo()
 	timestampDemo()
 	timeCalculate()
@@ -29,9 +30,9 @@ func main()  {
 }
 
 func timestampDemo() {
-	now := time.Now()	//获取时间
-	timestamp1 := now.Unix()	//获取秒级时间戳
-	timestamp2 := now.UnixNano()	//获取纳秒时间戳
+	now := time.Now()            //获取时间
+	timestamp1 := now.Unix()     //获取秒级时间戳
+	timestamp2 := now.UnixNano() //获取纳秒时间戳
 	fmt.Printf("current timestamp1: %v\n", timestamp1)
 	fmt.Printf("current timestamp2: %v\n", timestamp2)
 
@@ -40,7 +41,7 @@ func timestampDemo() {
 	fmt.Printf("%d-%02d-%02d %02d:%02d:%02d\n", time1.Year(), time1.Month(), time1.Day(), time1.Hour(), time1.Minute(), time1.Second())
 }
 
-func timeCalculate()  {
+func timeCalculate() {
 	now := time.Now()
 	later := now.Add(time.Hour)
 	fmt.Printf("current:%v\n", now)
@@ -51,7 +52,7 @@ func timeCalculate()  {
 	fmt.Printf("later after now :%v\n", later.After(now))
 }
 
-func tickDemo()  {
+func tickDemo() {
 	ticker := time.Tick(time.Second)
 	start := time.Now()
 	time.Sleep(100 * time.Millisecond)
@@ -62,7 +63,7 @@ func tickDemo()  {
 	}
 }
 
-func formatDemo()  {
+func formatDemo() {
 	now := time.Now()
 	// 格式化的模板为Go的出生时间2006年1月2号15点04分 Mon Jan
 	// 24小时制
@@ -72,7 +73,7 @@ func formatDemo()  {
 	fmt.Println(now.Format("2006/01/02 15:04"))
 }
 
-func decodeTimeStr()  {
+func decodeTimeStr() {
 	now := time.Now()
 	fmt.Println(now)
 	loc, err := time.LoadLocation("Asia/Shanghai")
