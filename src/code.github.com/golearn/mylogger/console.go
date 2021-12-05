@@ -23,7 +23,17 @@ const (
 
 //往终端里写日志相关内容
 type Logger struct {
-	Level LogLevel
+	Level   LogLevel
+	logChan chan *LogMsg
+}
+
+type LogMsg struct {
+	Level     LogLevel
+	Msg       string
+	FuncName  string
+	FileName  string
+	Timestamp string
+	line      int
 }
 
 //Logger 构造夯实
